@@ -1,7 +1,7 @@
 /*!
  * Bootstrap v4.2.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
- * Copyright 2011-2018 Twitter, Inc.
+ * Copyright 2011-2018 Twitter, Inc.h
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
@@ -295,12 +295,12 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
   font-family: inherit;
-  font-weight: 500;
-  line-height: 1.2;
-  color: inherit; }
+  font-weight: 300;
+  line-height: 1.1;
+  color: initial; }
 
 h1, .h1 {
-  font-size: 2.5rem; }
+  font-size: 2.1rem; }
 
 h2, .h2 {
   font-size: 2rem; }
@@ -457,14 +457,12 @@ pre {
   @media (min-width: 1200px) {
     .container {
       max-width: 1140px; } }
-
 .container-fluid {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto; }
-
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -473,7 +471,6 @@ pre {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px; }
-
 .no-gutters {
   margin-right: 0;
   margin-left: 0; }
@@ -481,7 +478,6 @@ pre {
   .no-gutters > [class*="col-"] {
     padding-right: 0;
     padding-left: 0; }
-
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col,
 .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm,
 .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md,
@@ -8011,10 +8007,10 @@ a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-  color: #82ae46; }
+  color: #ad3939; }
   a:hover, a:focus {
     text-decoration: none;
-    color: #82ae46; }
+    color: rgb(219, 67, 67); }
 
 h1, h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5 {
@@ -8399,7 +8395,7 @@ h1, h2, h3, h4, h5,
           font-family: "Amatic SC", cursive; }
           @media (max-width: 767.98px) {
             .owl-carousel.home-slider .slider-item .slider-text h1 {
-              font-size: 40px; } }
+              font-size: 30px; } }
         .owl-carousel.home-slider .slider-item .slider-text p {
           color: rgba(0, 0, 0, 0.8);
           font-weight: 400; }

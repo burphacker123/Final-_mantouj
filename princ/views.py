@@ -4,7 +4,7 @@ from .models import AboutPage, HomeProducts, HomeSliders, ArtisanalProduct, Natu
 # Create your views here.
 def index(request):
     sliders = HomeSliders.objects.all()
-    products = HomeProducts.objects.all()
+    products = HomeProducts.objects.all()[0]
     return render(request, 'index.html', context={'sliders': sliders, 'products': products})
 def about(request):
     aboutDescription = AboutPage.objects.all()
@@ -15,5 +15,3 @@ def natural(request):
 def artisanal(request):
     Products = ArtisanalProduct.objects.all()
     return render(request, 'artisanal.html', context={'products': Products})
-def contact(request):
-    return render(request, 'contact.html')

@@ -3,7 +3,7 @@ from .models import ArtisanalProduct, HomeProducts, NaturalProduct, HomeSliders,
 # Create your views here.
 def index(request):
     sliders = HomeSliders.objects.all()
-    products = HomeProducts.objects.all()
+    products = HomeProducts.objects.all()[0]
     return render(request, 'fr/indexfr.html', context={'sliders': sliders, 'products': products})
 def about(request):
     aboutDescription = AboutPage.objects.all()
