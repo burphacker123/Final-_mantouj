@@ -1,10 +1,11 @@
 from django.shortcuts import render
-from .models import ArtisanalProduct, HomeProducts, NaturalProduct, HomeSliders, AboutPage
+from .models import ArtisanalProduct, HomeProducts, NaturalProduct, HomeSliders, AboutPage, Blog
 # Create your views here.
 def index(request):
+    blog = Blog.objects.all()
     sliders = HomeSliders.objects.all()
     products = HomeProducts.objects.all()
-    return render(request, 'arab/indexar.html', context={'sliders': sliders, 'products': products})
+    return render(request, 'arab/indexar.html', context={'sliders': sliders, 'products': products, 'blog': blog})
 def about(request):
     aboutDescription = AboutPage.objects.all()
     return render(request, 'arab/aboutar.html', context={'description': aboutDescription})
@@ -14,5 +15,6 @@ def natural(request):
 def artisanal(request):
     Products = ArtisanalProduct.objects.all()
     return render(request, 'arab/artisanalar.html', context={'products': Products})
-def contact(request):
-    return render(request, 'arab/contactar.html')
+def blog(request):
+    blog = Blog.objects.all()
+    return render(request, 'arab/blogar.html', context={'blog':blog})

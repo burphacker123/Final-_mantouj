@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'princ', 'fr', 'ar', 'contact', 'cart'
+    'princ', 'fr', 'ar', 'contact', 'cart', 'contactarab', 'contactfr',
+    'widget_tweaks'
 ]
 
 MIDDLEWARE = [

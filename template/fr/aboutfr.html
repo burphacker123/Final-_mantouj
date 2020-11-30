@@ -3,6 +3,7 @@
 <html lang="en">
   <head>
     <title>MANTOUJ TOUNES</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/fleur.jpg' %}" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
@@ -50,7 +51,7 @@
               </div>
               <div class="#">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
-                  aria-expanded="false" style="color: blanchedalmond;"><img src="{% static 'images/us.svg' %}" alt=""
+                  aria-expanded="false" style="color: blanchedalmond;"><img src="{% static 'images/fr.svg' %}" alt=""
                     width="30px" length="30px" /></a>
                 <i class="united states flag"></i>
                 <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -78,16 +79,19 @@
 	      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="/" class="nav-link">Acceuil</a></li>
 	          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Boutique</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="shop">Shop</a>
-              	<a class="dropdown-item" href="artisanal">Shop</a>
+              	<a class="dropdown-item" href="shop">Naturel</a>
+              	<a class="dropdown-item" href="artisanal">Artisanal</a>
               </div>
             </li>
-	          <li class="nav-item active"><a href="about" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+            <li class="nav-item active"><a href="/fr/about" class="nav-link">A propos</a></li>
+            <li class="nav-item active">
+              <a href="/fr/blog" class="nav-link">Blog</a>
+            </li>
+	          <li class="nav-item"><a href="/fr/contact" class="nav-link">Contact</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -97,8 +101,8 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs" ><span class="mr-2" style="color: grey;"><a href="/">Home</a></span> <span style="color: grey;">About us</span></p>
-            <h1 class="mb-0 bread" style="color: grey;">About us</h1>
+          	<p class="breadcrumbs" ><span class="mr-2" style="color: grey;"><a href="/fr/">Acceuil</a></span> <span style="color: grey;">A propos</span></p>
+            <h1 class="mb-0 bread" style="color: grey;">A propos</h1>
           </div>
         </div>
       </div>
@@ -117,8 +121,8 @@
 	          </div>
 	          <div class="pb-md-5">
 	          	<p>{{ a.body }}</p>
-              <p><a href="shop" class="btn btn-primary">Shop Natural</a></p>
-              <p><a href="artisanal" class="btn btn-primary">Shop Artisanal</a></p>
+              <p><a href="shop" class="btn btn-primary"> Natural</a></p>
+              <p><a href="artisanal" class="btn btn-primary"> Artisanal</a></p>
 						</div>
 					</div>
         </div>
@@ -141,7 +145,7 @@
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">MANTOUJ TOUNES</h2>
               <p>
-                NATURAL PRODUCT AND 100% FRESH
+                QUALITE BIO ET ORIGINAL
               </p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate">
@@ -160,15 +164,15 @@
             <div class="ftco-footer-widget mb-4 ml-md-5">
               <h2 class="ftco-heading-2">Menu</h2>
               <ul class="list-unstyled">
-                <li><a href="shop" class="py-2 d-block">Shop</a></li>
-                <li><a href="about" class="py-2 d-block">About</a></li>
-                <li><a href="contact" class="py-2 d-block">Contact Us</a></li>
+                <li><a href="./shop" class="py-2 d-block">Boutique</a></li>
+                <li><a href="./about" class="py-2 d-block">A Propos</a></li>
+                <li><a href="./contact" class="py-2 d-block">Contact</a></li>
               </ul>
             </div>
           </div>
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Have a Questions?</h2>
+              <h2 class="ftco-heading-2">Vos Question?</h2>
               <div class="block-23 mb-3">
                 <ul>
                   <li>
@@ -196,7 +200,7 @@
               </script>
               All rights reserved | This template is made with
               <i class="icon-heart color-danger" aria-hidden="true"></i> by
-              <a href="https://colorlib.com" target="_blank">Colorlib</a>
+              <a href="https://colorlib.com" target="_blank">Young Developer</a>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>

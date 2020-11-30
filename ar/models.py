@@ -25,5 +25,10 @@ class AboutPage(models.Model):
     Title = models.CharField(max_length=5000000)
     body = models.TextField(max_length=1002335489)
     image = models.ImageField(upload_to='pics')
-
+class Blog(models.Model):
+    image = models.ImageField(upload_to='pics')
+    Title = models.CharField(max_length=5000)
+    body = models.TextField(max_length=10020)
+    Imgwidth = models.IntegerField()
+    Imgheight = models.IntegerField()
 # Create your models here.

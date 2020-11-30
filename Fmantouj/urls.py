@@ -19,7 +19,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('cart', include('cart.urls')),
+    path('ar/contact', include('contactarab.urls')),
+    path('fr/contact', include('contactfr.urls')),
     path('contact', include('contact.urls')),
     path('ar/', include('ar.urls')),
     path('fr/', include('fr.urls')),

@@ -3,10 +3,11 @@
 <html lang="en">
 <head>
   <title>MANTOUJ TOUNES</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/fleur.jpg' %}" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"rel="stylesheet" />
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'/>
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}" />
@@ -72,11 +73,11 @@
       <a class="navbar-brand" href="/">منتوج تونس</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
         aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span> Menu
+        <span class="oi oi-menu"></span> جدول
       </button>
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="/ar" class="nav-link">الاستقبال</a></li>
+          <li class="nav-item active"><a href="/ar" class="nav-link">الاستقبال</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">تصفح البضائع</a>
@@ -85,11 +86,14 @@
               <a class="dropdown-item" href="/ar/artisanal">الاصطناعية</a>
             </div>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a href="/ar/about" class="nav-link">معرفة المزيد</a>
           </li>
           <li class="nav-item">
-            <a href="/contact" class="nav-link">الاتصال</a>
+            <a href="/ar/blog" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="/ar/contact" class="nav-link">الاتصال</a>
           </li>
         </ul>
       </div>
@@ -105,12 +109,12 @@
           <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
             <div class="col-md-12 ftco-animate text-center">
               <h1 class="mb-2" style=" font-size: 5rem;">
-                نقدم منتج أصلي طبيعي 100٪
+                نقدم منتج أصلي طبيعي %100
               </h1>
               <h2 class="subheading mb-4">
                 نحن نقدم منتجات عضوية طبيعية
               </h2>
-              <p><a href="shop" class="btn btn-primary"></a>طبيعي</a></p>
+              <p><a href="shop" class="btn btn-primary">طبيعي</a></p>
               <p><a href="artisanal" class="btn btn-primary">الاصطناعية</a></p>
             </div>
           </div>
@@ -129,7 +133,7 @@
             </div>
             <div class="media-body">
               <h3 class="heading">الشحن مجانا</h3>
-              <span>عند الطلب أكثر من 100 دولار</span>
+              <span>عند الطلب أكثر من 100 دينار</span>
             </div>
           </div>
         </div>
@@ -215,8 +219,20 @@
       </div>
     </div>
   </section>
-  <hr />
-  <footer class="ftco-footer ftco-section">
+  <hr/>
+  
+  <h1 style="font-family:'Trebuchet MS','Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif ;color:rgba(2, 124, 18, 0.479); font-size: 40px; margin:0.6cm;"><b>Blog</b></h1>
+  {% for a in blog %}
+  <div class="card" style="width: 11.7cm; margin:0.4cm; display:inline-block; height: 8cm;">
+    <img class="card-img-top" src="{{ a.image.url }}" alt="Card image cap" height={{ a.Imgheight }} width={{ a.Imgwidth }}>
+    <div class="card-body">
+      <h5 class="card-title" align="center">{{ a.Title }}</h5>
+      <a href="/ar/blog#{{ a.Title }}" class="card-link">Read more...</a>
+    </div>
+  </div>
+   {% endfor %}
+	
+  <footer class="ftco-footer ftco-section" style="padding-top: 150em;">
     <div class="container">
       <div class="row">
         <div class="mouse">
@@ -230,9 +246,9 @@
       <div class="row mb-5">
         <div class="col-md">
           <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">MANTOUJ TOUNES</h2>
+            <h2 class="ftco-heading-2">منتوج تونس</h2>
             <p>
-              منتج طبيعي وطازج 100٪
+              منتج طبيعي وطازج %100
             </p>
             <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
 							<li class="ftco-animate">
@@ -249,7 +265,7 @@
         </div>
         <div class="col-md">
           <div class="ftco-footer-widget mb-4 ml-md-5">
-            <h2 class="ftco-heading-2">Menu</h2>
+            <h2 class="ftco-heading-2">جدول</h2>
             <ul class="list-unstyled">
               <li><a href="shop" class="py-2 d-block">متجر</a></li>
               <li><a href="about" class="py-2 d-block">تعرف أكثر</a></li>
@@ -263,7 +279,7 @@
             <div class="block-23 mb-3">
               <ul>
 								<li>
-									<span class="icon icon-map-marker"></span><span class="text">9 Rue de L'or Cite Ettaamir Sousse</span>
+									<span class="icon icon-map-marker"></span><span class="text">9 نهج الذهب حي التعمير سوسة</span>
 								</li>
 								<li>
 									<a href="#"><span class="icon icon-phone"></span><span class="text">+216 58 302 805</span></a>
@@ -287,7 +303,7 @@
             </script>
             All rights reserved | This template is made with
             <i class="icon-heart color-danger" aria-hidden="true"></i> by
-            <a href="https://colorlib.com" target="_blank">Colorlib</a>
+            <a href="#" target="_blank">young developper</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
           </p>
         </div>
