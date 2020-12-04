@@ -67,7 +67,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="/fr" class="nav-link">Accueil</a></li>
+					<li class="nav-item"><a href="/fr" class="nav-link">Accueil</a></li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false">Boutique</a>
@@ -108,7 +108,7 @@
     <section class="ftco-section" >
     	<div class="">
             {% for a in blog %}
-            <div id="{{ a.Title }}" class="card" style=" width: 20cm; margin:2cm; display:inline-block; height:auto">
+            <div id="{{ a.Title }}" class="card" style=" width: 35%; margin:2cm; display:inline-block; height:auto">
               <img class="card-img-top" src="{{ a.image.url }}" alt="Card image cap"></a>
               <div class="card-body">
                 <h5 class="card-title" align="center">{{ a.Title }}</h5>
@@ -215,6 +215,6 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="{% static 'js/google-map.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
-    
+
   </body>
 </html>

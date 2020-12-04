@@ -4,7 +4,7 @@ from .models import ArtisanalProduct, HomeProducts, NaturalProduct, HomeSliders,
 def index(request):
     blog = Blog.objects.all()
     sliders = HomeSliders.objects.all()
-    products = HomeProducts.objects.all()
+    products = HomeProducts.objects.all()[0]
     return render(request, 'arab/indexar.html', context={'sliders': sliders, 'products': products, 'blog': blog})
 def about(request):
     aboutDescription = AboutPage.objects.all()

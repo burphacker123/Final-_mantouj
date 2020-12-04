@@ -182,12 +182,12 @@
 				{% for a in products.Natural.all %}
 				<div class="col-md-6 col-lg-3 ftco-animate">
 					<div class="product">
-						<a href="#" class="img-prod"><img class="img-fluid" src="{{ a.image.url }}"
+						<a href="shop#{{ a.name }}" class="img-prod"><img class="img-fluid" src="{{ a.image.url }}"
 								alt="Colorlib Template" />
 							<div class="overlay"></div>
 						</a>
 						<div class="text py-3 pb-4 px-3 text-center">
-							<h3><a href="#">{{ a.name }}</a></h3>
+							<h3><a href="shop#{{ a.name }}">{{ a.name }}</a></h3>
 							<div class="d-flex">
 								<div class="pricing">
 									<p class="price">
@@ -216,12 +216,12 @@
 				{% for a in products.Artisanal.all %}
 				<div class="col-md-6 col-lg-3 ftco-animate">
 					<div class="product">
-						<a href="#" class="img-prod"><img class="img-fluid" src="{{ a.image.url }}"
+						<a href="artisanal#{{ a.name }}" class="img-prod"><img class="img-fluid" src="{{ a.image.url }}"
 								alt="Colorlib Template" />
 							<div class="overlay"></div>
 						</a>
 						<div class="text py-3 pb-4 px-3 text-center">
-							<h3><a href="#">{{ a.name }}</a></h3>
+							<h3><a href="artisanal#{{ a.name }}">{{ a.name }}</a></h3>
 							<div class="d-flex">
 								<div class="pricing">
 									<p class="price">
@@ -251,14 +251,13 @@
 		</div>
 	</section>
 	<hr/>
-  
 	<h1 style="font-family:'Trebuchet MS','Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif ;color:rgba(2, 124, 18, 0.479); font-size: 40px; margin:0.6cm;"><b>Blog</b></h1>
 	{% for a in blog %}
-	<div class="card" style="width: 11.7cm; margin:0.4cm; display:inline-block; height: 8cm;">
+	<div class="card" style="width:11.7cm; margin:0.4cm; display:inline-block; height: 8cm;">
 	  <img class="card-img-top" src="{{ a.image.url }}" alt="Card image cap" height={{ a.Imgheight }} width={{ a.Imgwidth }}>
 	  <div class="card-body">
 		<h5 class="card-title" align="center">{{ a.Title }}</h5>
-		<a href="/fr/blog#{{ a.Title }}" class="card-link">Read more...</a>
+		<a href="/fr/blog#{{ a.Title }}" class="card-link">Lire plus...</a>
 	  </div>
 	</div>
 	 {% endfor %}
@@ -357,6 +356,7 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 	<script src="{% static 'js/google-map.js' %}"></script>
 	<script src="{% static 'js/main.js' %}"></script>
+	<script type="text/javascript" src="//compteur.websiteout.com/js/22/0/0/0"></script>
 </body>
 
 </html>

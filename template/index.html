@@ -182,11 +182,11 @@
         {% for a in products.Natural.all %}
         <div class="col-md-6 col-lg-3 ftco-animate">
           <div class="product">
-            <a href="shop" class="img-prod"><img class="img-fluid" src="{{ a.image.url }}" alt="Colorlib Template" />
+            <a href="shop#{{ a.name }}" class="img-prod"><img class="img-fluid" src="{{ a.image.url }}" alt="Colorlib Template" />
               <div class="overlay"></div>
             </a>
             <div class="text py-3 pb-4 px-3 text-center">
-              <h3><a href="shop">{{ a.name }}</a></h3>
+              <h3><a href="shop#{{ a.name }}">{{ a.name }}</a></h3>
               <div class="d-flex">
                 <div class="pricing">
                   <p class="price">
@@ -218,7 +218,7 @@
               <div class="overlay"></div>
             </a>
             <div class="text py-3 pb-4 px-3 text-center">
-              <h3><a href="#">{{ a.name }}</a></h3>
+              <h3><a href="artisanal#{{ a.name }}">{{ a.name }}</a></h3>
               <div class="d-flex">
                 <div class="pricing">
                   <p class="price">
@@ -226,7 +226,7 @@
                   </p>
                 </div>
               </div>
-              <div class="bottom-area d-flex px-3">
+              <!--<div class="bottom-area d-flex px-3">
                  <div class="m-auto d-flex">
                   <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
                     <span><i class="ion-ios-menu"></i></span>
@@ -237,7 +237,7 @@
                   <a href="#" class="heart d-flex justify-content-center align-items-center ">
                     <span><i class="ion-ios-heart"></i></span>
                   </a>
-                </div> 
+                </div>-->
               </div>
             </div>
           </div>
@@ -247,7 +247,6 @@
     </div>
   </section>
     <hr />
-
     <h1 style="font-family:'Trebuchet MS','Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif ;color:rgba(2, 124, 18, 0.479); font-size: 40px; margin:0.6cm;"><b>Blog</b></h1>
     {% for a in blog %}
   <div class="card" style="width: 11.7cm; margin:0.4cm; display:inline-block; height: 8cm;">
@@ -258,7 +257,6 @@
     </div>
   </div>
    {% endfor %}
-
   <footer class="ftco-footer ftco-section" style="padding-top: 10em;">
     <div class="container">
       <div class="row">

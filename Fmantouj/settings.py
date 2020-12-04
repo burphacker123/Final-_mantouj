@@ -25,7 +25,7 @@ SECRET_KEY = '83t_lt97j4b$l#1_1_pyagfwdgwjpv1z5ea3ljsvd5fg&(ro3l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mantoujtounes.pythonanywhere.com']
 
 
 # Application definition
@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'princ', 'fr', 'ar', 'contact', 'cart', 'contactarab', 'contactfr',
-    'widget_tweaks'
 ]
 
 MIDDLEWARE = [
@@ -120,7 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+STATIC_ROOT = '/home/Mantoujtounes/Final-_mantouj/assets'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
