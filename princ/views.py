@@ -1,21 +1,24 @@
 from django.shortcuts import render
-from .models import AboutPage, HomeProducts, HomeSliders, ArtisanalProduct, NaturalProduct, Blog
-
-# Create your views here.
+from .models import HomeSliders
+from blog.models import BlogClass
+from naturalProd.models import NaturalProd
+from artisanalProd.models import ArtisanalProd
+from about.models import AboutObj
+from homeProduct.models import HomeObj
 def index(request):
-    blog = Blog.objects.all()
+    choice = HomeObj.objects.all()
+    blogPosts = BlogClass.objects.all()
     sliders = HomeSliders.objects.all()
-    products = HomeProducts.objects.all()[0]
-    return render(request, 'index.html', context={'sliders': sliders, 'products': products, 'blog': blog})
+    return render(request, 'index.html', context={'sliders': sliders, 'blog':blogPosts, 'homeobj': choice})
 def about(request):
-    aboutDescription = AboutPage.objects.all()
-    return render(request, 'about.html', context={'description': aboutDescription})
+    aboutObject = AboutObj.objects.all()
+    return render(request, 'about.html', context={"about": aboutObject})
 def natural(request):
-    Products = NaturalProduct.objects.all()
-    return render(request, 'shop.html', context={'products': Products})
+    prods = NaturalProd.objects.all()
+    return render(request, 'shop.html', context={"prods":prods})
 def artisanal(request):
-    Products = ArtisanalProduct.objects.all()
-    return render(request, 'artisanal.html', context={'products': Products})
+    prods = ArtisanalProd.objects.all()
+    return render(request, 'artisanal.html', context={"prods":prods})
 def blog(request):
-    blog = Blog.objects.all()
-    return render(request, 'blog.html', context={'blog':blog})
+    blogPosts = BlogClass.objects.all()
+    return render(request, 'blog.html', context={'blog': blogPosts})

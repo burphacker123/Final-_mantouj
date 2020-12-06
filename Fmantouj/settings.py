@@ -25,7 +25,7 @@ SECRET_KEY = '83t_lt97j4b$l#1_1_pyagfwdgwjpv1z5ea3ljsvd5fg&(ro3l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mantoujtounes.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -37,7 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'princ', 'fr', 'ar', 'contact', 'cart', 'contactarab', 'contactfr',
+    'princ', 'fr', 'ar', 'contact', 'contactarab', 'contactfr',
+    'blog',
+    'naturalProd',
+    'artisanalProd',
+    'about',
+    'homeProduct'
 ]
 
 MIDDLEWARE = [

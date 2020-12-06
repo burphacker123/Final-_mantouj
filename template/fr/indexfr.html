@@ -179,74 +179,70 @@
 		</div>
 		<div class="container">
 			<div class="row">
-				{% for a in products.Natural.all %}
-				<div class="col-md-6 col-lg-3 ftco-animate">
-					<div class="product">
-						<a href="shop#{{ a.name }}" class="img-prod"><img class="img-fluid" src="{{ a.image.url }}"
-								alt="Colorlib Template" />
-							<div class="overlay"></div>
-						</a>
-						<div class="text py-3 pb-4 px-3 text-center">
-							<h3><a href="shop#{{ a.name }}">{{ a.name }}</a></h3>
-							<div class="d-flex">
-								<div class="pricing">
-									<p class="price">
-										<span class="price-sale">{{ a.price }}dT</span>
-									</p>
-								</div>
-							</div>
-							<div class="bottom-area d-flex px-3">
-								<div class="m-auto d-flex">
-									<a href="#"
-										class="add-to-cart d-flex justify-content-center align-items-center text-center">
-										<span><i class="ion-ios-menu"></i></span>
-									</a>
-									<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-										<span><i class="ion-ios-cart"></i></span>
-									</a>
-									<a href="#" class="heart d-flex justify-content-center align-items-center ">
-										<span><i class="ion-ios-heart"></i></span>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				{% endfor %}
-				{% for a in products.Artisanal.all %}
-				<div class="col-md-6 col-lg-3 ftco-animate">
-					<div class="product">
-						<a href="artisanal#{{ a.name }}" class="img-prod"><img class="img-fluid" src="{{ a.image.url }}"
-								alt="Colorlib Template" />
-							<div class="overlay"></div>
-						</a>
-						<div class="text py-3 pb-4 px-3 text-center">
-							<h3><a href="artisanal#{{ a.name }}">{{ a.name }}</a></h3>
-							<div class="d-flex">
-								<div class="pricing">
-									<p class="price">
-										<span class="price-sale">{{ a.price }}dT</span>
-									</p>
-								</div>
-							</div>
-							<div class="bottom-area d-flex px-3">
-								<div class="m-auto d-flex">
-									<a href="#"
-										class="add-to-cart d-flex justify-content-center align-items-center text-center">
-										<span><i class="ion-ios-menu"></i></span>
-									</a>
-									<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-										<span><i class="ion-ios-cart"></i></span>
-									</a>
-									<a href="#" class="heart d-flex justify-content-center align-items-center ">
-										<span><i class="ion-ios-heart"></i></span>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				{% endfor %}
+				{% for a in products.nature.all %}
+        <div class="col-md-6 col-lg-3 ftco-animate">
+          <div class="product">
+            <a href="shop#{{ a.FRtitle }}" class="img-prod"><img class="img-fluid" src="{{ a.image.url }}" alt="Colorlib Template" />
+              <div class="overlay"></div>
+            </a>
+            <div class="text py-3 pb-4 px-3 text-center">
+              <h3><a href="shop#{{ a.FRtitle }}">{{ a.FRtitle }}</a></h3>
+              <div class="d-flex">
+                <div class="pricing">
+                  <p class="price">
+                    <span class="price-sale">{{ a.price }}Dt</span>
+                  </p>
+                </div>
+              </div>
+              <div class="bottom-area d-flex px-3">
+                <!-- <div class="m-auto d-flex">
+                  <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                    <span><i class="ion-ios-menu"></i></span>
+                  </a>
+                  <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                    <span><i class="ion-ios-cart"></i></span>
+                  </a>
+                  <a href="#" class="heart d-flex justify-content-center align-items-center ">
+                    <span><i class="ion-ios-heart"></i></span>
+                  </a>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        {% for a in homeobj.artisanal.all %}
+        <div class="col-md-6 col-lg-3 ftco-animate">
+          <div class="product">
+            <a href="artisanal#{{ a.FRtitle }}" class="img-prod"><img class="img-fluid" src="{{ a.image.url }}" alt="Colorlib Template" />
+              <div class="overlay"></div>
+            </a>
+            <div class="text py-3 pb-4 px-3 text-center">
+              <h3><a href="artisanal#{{ a.FRtitle }}">{{ a.FRtitle }}</a></h3>
+              <div class="d-flex">
+                <div class="pricing">
+                  <p class="price">
+                    <span class="price-sale">{{ a.price }}Dt</span>
+                  </p>
+                </div>
+              </div>
+              <!--<div class="bottom-area d-flex px-3">
+                 <div class="m-auto d-flex">
+                  <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                    <span><i class="ion-ios-menu"></i></span>
+                  </a>
+                  <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                    <span><i class="ion-ios-cart"></i></span>
+                  </a>
+                  <a href="#" class="heart d-flex justify-content-center align-items-center ">
+                    <span><i class="ion-ios-heart"></i></span>
+                  </a>
+                </div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
 			</div>
 		</div>
 	</section>
@@ -254,10 +250,10 @@
 	<h1 style="font-family:'Trebuchet MS','Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif ;color:rgba(2, 124, 18, 0.479); font-size: 40px; margin:0.6cm;"><b>Blog</b></h1>
 	{% for a in blog %}
 	<div class="card" style="width:11.7cm; margin:0.4cm; display:inline-block; height: 8cm;">
-	  <img class="card-img-top" src="{{ a.image.url }}" alt="Card image cap" height={{ a.Imgheight }} width={{ a.Imgwidth }}>
+	  <img class="card-img-top" src="{{ a.image.url }}" alt="Card image cap" height=204>
 	  <div class="card-body">
-		<h5 class="card-title" align="center">{{ a.Title }}</h5>
-		<a href="/fr/blog#{{ a.Title }}" class="card-link">Lire plus...</a>
+		<h5 class="card-title" align="center">{{ a.FRtitle }}</h5>
+		<a href="/fr/blog#{{ a.FRtitle }}" class="card-link">Lire plus...</a>
 	  </div>
 	</div>
 	 {% endfor %}

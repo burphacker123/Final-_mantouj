@@ -101,11 +101,11 @@
     <section class="ftco-section" >
     	<div class="">
             {% for a in blog %}
-            <div id="{{ a.Title }}" class="card" style=" width: 35%; margin:2cm; display:inline-block; height:auto">
+            <div id="{{ a.ARtitle }}" class="card" style=" width: 35%; margin:2cm; display:inline-block; height:auto">
               <img class="card-img-top" src="{{ a.image.url }}" alt="Card image cap"></a>
               <div class="card-body">
-                <h5 class="card-title" align="center">{{ a.Title }}</h5>
-                <h5 class="card-title" align="left">{{ a.body }}</h5>
+                <h5 class="card-title" align="center">{{ a.ARtitle }}</h5>
+                <h5 class="card-title" align="left">{{ a.ARdescription }}</h5>
               </div>
             </div>
              {% endfor %}
