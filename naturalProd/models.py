@@ -9,7 +9,12 @@ class NaturalProd(models.Model):
     ENdescription = models.TextField(max_length=1200)
     FRdescription = models.TextField(max_length=1200)
     ARdescription = models.TextField(max_length=1200)
+    pricedemikg = models.FloatField(max_length=1000)
+    pricequartkg = models.FloatField(max_length=1000)
     price = models.FloatField(max_length=1000)
+    pricedemikg = models.FloatField(max_length=1000)
+    pricequartkg = models.FloatField(max_length=1000)
+    slug = models.SlugField(unique=True)
     available = models.BooleanField(default=True)
     def __str__(self):
         return f'{self.ENtitle}'

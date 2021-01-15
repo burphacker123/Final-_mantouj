@@ -115,7 +115,7 @@
         {% for a in prods %}
         <div class="col-md-6 col-lg-3 ftco-animate">
           <div class="product">
-            <a class="img-prod"><img class="img-fluid" src="{{ prod.image.url }}" alt="Colorlib Template" />
+            <a href="/fr/shop/{{ a.slug }}" class="img-prod"><img class="img-fluid" src="{{ a.image.url }}" alt="Colorlib Template" />
               <span class="status">BIO</span>
               <div class="overlay"></div>
             </a>
@@ -124,7 +124,9 @@
               <div class="d-flex">
                 <div class="pricing">
                   <p class="price">
-                    <span class="price-sale">{{ prod.price }}DT</span>
+                    <p class="price"><span class="price-sale">{{ a.price }}DT</span>
+						<p class="price"><span class="price-sale">{{ a.pricedemikg }}DT</span>
+						  <p class="price"><span class="price-sale">{{ a.pricequartkg }}DT</span>
                     <h3><a>{{ prod.FRdescription }}</a></h3>
                   </p>
                 </div>
