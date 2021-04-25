@@ -109,7 +109,7 @@
     	<div class="">
             {% for a in blog %}
             <div id="{{ a.FRtitle }}" class="card" style=" width: 35%; margin:2cm; display:inline-block; height:auto">
-              <img class="card-img-top" src="{{ a.image.url }}" alt="Card image cap"></a>
+              <img class="card-img-top" src="{{ a.image.url }}" alt="Card image cap" width="{{ a.imageW }} height="{{ a.imageH }}"></a>
               <div class="card-body">
                 <h5 class="card-title" align="center">{{ a.FRtitle }}</h5>
                 <h5 class="card-title" align="justify">{{ a.FRdescription }}</h5>

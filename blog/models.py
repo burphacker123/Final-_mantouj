@@ -9,5 +9,7 @@ class BlogClass(models.Model):
     ENdescription = models.TextField(max_length=2000)
     FRdescription = models.TextField(max_length=2000)
     ARdescription = models.TextField(max_length=2000)
+    imageW = models.FloatField()
+    imaheH = models.FloatField()
     def __str__(self):
         return f'{self.ENtitle}'
