@@ -1,8 +1,9 @@
 {% load static %}
+{% load mathfilters %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>MANTOUJ TOUNES</title>
+  <title>ZAKIABIO</title>
   <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/fleur.jpg' %}" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -60,7 +61,7 @@
 	</div>
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="/fr">MANTOUJ TOUNES</a>
+			<a class="navbar-brand" href="/fr">ZAKIABIO</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
 				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
@@ -72,8 +73,8 @@
 						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false">Boutique</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
-							<a class="dropdown-item" href="shop">Naturel</a>
-							<a class="dropdown-item" href="artisanal">Artisanal</a>
+							<a class="dropdown-item" href="/fr/shop">Naturel</a>
+							<a class="dropdown-item" href="/fr/artisanal">Artisanal</a>
 						</div>
 					</li>
 					<li class="nav-item ">
@@ -113,10 +114,10 @@
 			  </div>
 			  <div class="col-lg-6 product-details pl-md-5 ftco-animate">
 				  <h3>{{ product.FRtitle }}</h3>
-				  
-          <p class="price"><span>1Kg:{{ product.price }} / 500g:{{ product.pricedemikg }} / 250g:{{ product.pricequartkg }}</span></p>
-
-				  <p>{{ product.FRdescription }}</p>
+             <p align="center" class="price"><span>1Kg/1L : {{ product.price }}Dt - {{ product.price|intdiv:2.5 }}$ - {{ product.price|intdiv:3 }}€</span></p>
+        <p  align="center" class="price"><span>500g/½L : {{ product.pricedemikg }}Dt - {{ product.pricedemikg|intdiv:2.5 }}$ - {{ product.pricedemikg|intdiv:3 }}€</span></p>
+        <p  align="center" class="price"><span>250g/¼L : {{ product.pricequartkg }}Dt - {{ product.pricequartkg|intdiv:2.5 }}$ - {{ product.pricequartkg|intdiv:3 }}€</span></p>
+			<p align="justify">{{ product.FRdescription }}</p>
 					  <div class="row mt-4">
 						  <!-- <div class="col-md-6">
 							  <div class="form-group d-flex">
@@ -149,6 +150,8 @@
         {% if product.available %}
 				<div class="col-md-12">
 					<p style="color: rgb(20, 146, 26);">Disponible</p>
+        {% else %}
+                    <p style="color: rgb(255, 0, 0);">InDisponible</p>
         </div>
         {% endif %}
 			</div>
@@ -157,8 +160,6 @@
 		  </div>
 	  </div>
   </section>
-
-  
   <footer class="ftco-footer ftco-section">
 	<div class="container">
 	  <div class="row">
@@ -263,5 +264,4 @@
   <script src="{% static 'js/google-map.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
 </body>
-
 </html>

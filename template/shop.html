@@ -1,8 +1,9 @@
 {% load static %}
+{% load mathfilters %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MANTOUJ TOUNES</title>
+    <title>ZAKIABIO</title>
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/fleur.jpg' %}" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -107,21 +108,17 @@
     <section class="ftco-section">
     	<div class="container">
     		<div class="row">
-    			{% for a in prods %}
+    	{% for a in prods %}
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="shop/{{ a.slug }}" target="_blank" class="img-prod"><img class="img-fluid" src="{{ a.image.url }}" alt="Colorlib Template">
-    						<div class="overlay"></div>
-    					</a>
+    					<a href="shop/{{ a.slug }}" target="_blank" class="img-prod"><img class="img-fluid" src="{{ a.image.url }}" alt="Colorlib Template"> <div class="overlay"></div> </a>
     					<div class="text py-3 pb-4 px-3 text-center">
     						<h3><a href="#">{{ a.ENtitle }}</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-                    <p class="price"><span class="price-sale">{{ a.price }}DT</span>
-                      <p class="price"><span class="price-sale">{{ a.pricedemikg }}DT</span>
-                        <p class="price"><span class="price-sale">{{ a.pricequartkg }}DT</span>  
-                      <h3><a href="#">{{ a.ENdescription }}</a></h3></p>
-
+                    <p class="price">1kg= <span class="price-sale">{{ a.price}}Dt - {{ a.price|intdiv:2.5 }}$ - {{ a.price|intdiv:3 }}€</span>
+                    <p class="price">½Kg= <span class="price-sale">{{ a.pricedemikg }}Dt - {{ a.pricedemikg|intdiv:2.5 }}$ - {{ a.pricedemikg|intdiv:3 }}€</p></span>
+                    <p class="price">¼Kg= <span class="price-sale">{{ a.pricequartkg }}Dt - {{ a.pricequartkg|intdiv:2.5 }}$ - {{ a.pricequartkg|intdiv:3 }}€</p></span>
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
@@ -130,7 +127,7 @@
     						</div>
     					</div>
     				</div>
-          </div>
+                </div>
           {% endfor %}
     		</div>
     	</div>

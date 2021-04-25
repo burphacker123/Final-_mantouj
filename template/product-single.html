@@ -1,8 +1,9 @@
 {% load static %}
+{% load mathfilters %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>MANTOUJ TOUNES</title>
+  <title>ZAKIABIO</title>
   <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/fleur.jpg' %}" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -77,8 +78,8 @@
             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">Shop</a>
             <div class="dropdown-menu" aria-labelledby="dropdown04">
-              <a class="dropdown-item" href="shop">Natural</a>
-              <a class="dropdown-item" href="artisanal">Artisanal</a>
+              <a class="dropdown-item" href="/shop">Natural</a>
+              <a class="dropdown-item" href="/artisanal">Artisanal</a>
             </div>
           </li>
           <li class="nav-item">
@@ -113,10 +114,10 @@
 			  </div>
 			  <div class="col-lg-6 product-details pl-md-5 ftco-animate">
 				  <h3>{{ product.ENtitle }}</h3>
-				  
-          <p class="price"><span>1Kg:{{ product.price }} / 500g:{{ product.pricedemikg }} / 250g:{{ product.pricequartkg }}</span></p>
-
-				  <p>{{ product.ENdescription }}</p>
+        <p align="center" class="price"><span>1Kg/1L : {{ product.price }}Dt - {{ product.price|intdiv:2.5 }}$ - {{ product.price|intdiv:3 }}€</span></p>
+        <p  align="center" class="price"><span>500g/½L : {{ product.pricedemikg }}Dt - {{ product.pricedemikg|intdiv:2.5 }}$ - {{ product.pricedemikg|intdiv:3 }}€</span></p>
+        <p  align="center" class="price"><span>250g/¼L : {{ product.pricequartkg }}Dt - {{ product.pricequartkg|intdiv:2.5 }}$ - {{ product.pricequartkg|intdiv:3 }}€</span></p>
+		<p align="justify">{{ product.ENdescription }}</p>
 					  <div class="row mt-4">
 						  <!-- <div class="col-md-6">
 							  <div class="form-group d-flex">
@@ -148,7 +149,9 @@
         <div class="w-100"></div>
         {% if product.available %}
 				<div class="col-md-12">
-					<p style="color: rgb(20, 146, 26);">Available</p>
+					<p style="color: rgb(20, 146, 26);">Disponible</p>
+        {% else %}
+                    <p style="color: rgb(255, 0, 0);">InDisponible</p>
         </div>
         {% endif %}
 			</div>
@@ -158,7 +161,7 @@
 	  </div>
   </section>
 
-  
+
   <footer class="ftco-footer ftco-section" style="padding-top: 10em;">
     <div class="container">
       <div class="row">

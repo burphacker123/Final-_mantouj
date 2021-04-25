@@ -1,8 +1,9 @@
 {% load static %}
+{% load mathfilters %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>MANTOUJ TOUNES</title>
+	<title>ZAKIABIO</title>
 	<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/fleur.jpg' %}" />
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -60,7 +61,7 @@
 	</div>
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="/fr">MANTOUJ TOUNES</a>
+			<a class="navbar-brand" href="/fr">ZAKIABIO</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
 				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
@@ -104,13 +105,13 @@
 					<div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
 						<div class="col-md-12 ftco-animate text-center">
 							<h1 class="mb-2" style=" font-size: 5rem;">
-								Nous servons Original produit &amp; 100% Naturel
+								Nous servons des produits originals &amp; 100% Naturels
 							</h1>
 							<h2 class="subheading mb-4">
-								nous délivrons original &amp; Artisal
+								nous délivrons jusqu'a chez vous
 							</h2>
-							<p><a href="shop" class="btn btn-primary">Natural</a></p>
-							<p><a href="artisanal" class="btn btn-primary">Artisanal</a></p>
+							<p><a href="shop" class="btn btn-primary">Naturel</a></p>
+							<p><a href="artisanal" class="btn btn-primary">Artisanale</a></p>
 						</div>
 					</div>
 				</div>
@@ -138,8 +139,8 @@
 							<span class="flaticon-diet"></span>
 						</div>
 						<div class="media-body">
-							<h3 class="heading">Always Fresh</h3>
-							<span>Product well package</span>
+							<h3 class="heading">TOUJOURS FRAIS</h3>
+							<span>Produits bien Protéger</span>
 						</div>
 					</div>
 				</div>
@@ -149,7 +150,7 @@
 							<span class="flaticon-award"></span>
 						</div>
 						<div class="media-body">
-							<h3 class="heading">Qualité Superieur</h3>
+							<h3 class="heading">Qualité Superieure</h3>
 							<span>produits de Qualités</span>
 						</div>
 					</div>
@@ -190,7 +191,7 @@
               <div class="d-flex">
                 <div class="pricing">
                   <p class="price">
-                    <span class="price-sale">{{ a.price }}Dt</span>
+                    <span class="price-sale">{{ a.price}}Dt - {{ a.price|intdiv:2.5 }}$ - {{ a.price|intdiv:3 }}€</span>
                   </p>
                 </div>
               </div>
@@ -206,6 +207,11 @@
                     <span><i class="ion-ios-heart"></i></span>
                   </a>
                 </div> -->
+                {% if a.available %}
+					<p style="color: rgb(20, 146, 26);">Disponible</p>
+                {% else %}
+                    <p style="color: rgb(255, 0, 0);">InDipponible</p>
+                {% endif %}
               </div>
             </div>
           </div>
@@ -222,26 +228,30 @@
               <div class="d-flex">
                 <div class="pricing">
                   <p class="price">
-                    <span class="price-sale">{{ a.price }}Dt</span>
+                    <span class="price-sale">{{ a.price}}Dt - {{ a.price|intdiv:2.5 }}$ - {{ a.price|intdiv:3 }}€</span>
                   </p>
                 </div>
               </div>
-              <!--<div class="bottom-area d-flex px-3">
-                 <div class="m-auto d-flex">
-                  <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-                    <span><i class="ion-ios-menu"></i></span>
-                  </a>
-                  <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-                    <span><i class="ion-ios-cart"></i></span>
-                  </a>
-                  <a href="#" class="heart d-flex justify-content-center align-items-center ">
-                    <span><i class="ion-ios-heart"></i></span>
-                  </a>
-                </div>-->
+              <div class="bottom-area d-flex px-3">
+                 <!--<div class="m-auto d-flex">-->
+                 <!-- <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">-->
+                 <!--   <span><i class="ion-ios-menu"></i></span>-->
+                 <!-- </a>-->
+                 <!-- <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">-->
+                 <!--   <span><i class="ion-ios-cart"></i></span>-->
+                 <!-- </a>-->
+                 <!-- <a href="#" class="heart d-flex justify-content-center align-items-center ">-->
+                 <!--   <span><i class="ion-ios-heart"></i></span>-->
+                 <!-- </a>-->
+                  {% if a.available %}
+					<p style="color: rgb(20, 146, 26);">Disponible</p>
+        {% else %}
+                    <p style="color: rgb(255, 0, 0);">InDisponible</p>
+        {% endif %}
+                </div>
               </div>
             </div>
           </div>
-        </div>
         {% endfor %}
 			</div>
 		</div>

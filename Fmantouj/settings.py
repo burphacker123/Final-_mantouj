@@ -25,7 +25,7 @@ SECRET_KEY = '83t_lt97j4b$l#1_1_pyagfwdgwjpv1z5ea3ljsvd5fg&(ro3l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.zakiabio.com.tn']
 
 
 # Application definition
@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'naturalProd',
     'artisanalProd',
     'about',
-    'homeProduct'
+    'homeProduct',
+    'mathfilters'
 ]
 
 MIDDLEWARE = [

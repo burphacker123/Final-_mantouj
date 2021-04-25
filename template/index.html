@@ -1,8 +1,9 @@
 {% load static %}
+{% load mathfilters %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>MANTOUJ TOUNES</title>
+  <title>ZAKIABIO</title>
   <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/fleur.jpg' %}" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -65,7 +66,7 @@
   </div>
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="/">MANTOUJ TOUNES</a>
+      <a class="navbar-brand" href="/">ZAKIABIO</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
         aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> Menu
@@ -104,10 +105,10 @@
           <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
             <div class="col-md-12 ftco-animate text-center">
               <h1 class="mb-2" style=" font-size: 5rem;">
-                We serve Original product &amp; 100% Natural
+                We serve Original product 100% Natural
               </h1>
               <h2 class="subheading mb-4">
-                We deliver organic natural &amp; Artisal
+                We deliver organic natural Artisal
               </h2>
               <p><a href="shop" class="btn btn-primary">Natural</a></p>
               <p><a href="artisanal" class="btn btn-primary">Artisanal</a></p>
@@ -139,7 +140,7 @@
             </div>
             <div class="media-body">
               <h3 class="heading">Always Fresh</h3>
-              <span>Product well package</span>
+              <span>Product well packaged</span>
             </div>
           </div>
         </div>
@@ -182,15 +183,13 @@
         {% for a in homeobj.nature.all %}
         <div class="col-md-6 col-lg-3 ftco-animate">
           <div class="product">
-            <a href="shop#{{ a.ENtitle }}" class="img-prod"><img class="img-fluid" src="{{ a.image.url }}" alt="Colorlib Template" />
-              <div class="overlay"></div>
-            </a>
+            <a href="shop#{{ a.slug }}" class="img-prod"><img class="img-fluid" src="{{ a.image.url }}" alt="Colorlib Template" /> <div class="overlay"></div> </a>
             <div class="text py-3 pb-4 px-3 text-center">
-              <h3><a href="shop#{{ a.ENtitle }}">{{ a.ENtitle }}</a></h3>
+              <h3><a href="shop#{{ a.slug }}">{{ a.ENtitle }}</a></h3>
               <div class="d-flex">
                 <div class="pricing">
                   <p class="price">
-                    <span class="price-sale">{{ a.price }}Dt</span>
+                    <span class="price-sale">{{ a.price}}Dt - {{ a.price|intdiv:2.5 }}$ - {{ a.price|intdiv:3 }}€</span>
                   </p>
                 </div>
               </div>
@@ -206,6 +205,11 @@
                     <span><i class="ion-ios-heart"></i></span>
                   </a>
                 </div> -->
+                {% if a.available %}
+					<p style="color: rgb(20, 146, 26);">Available</p>
+                {% else %}
+                    <p style="color: rgb(255, 0, 0);">UnAvailable</p>
+                {% endif %}
               </div>
             </div>
           </div>
@@ -214,30 +218,31 @@
         {% for a in homeobj.artisanal.all %}
         <div class="col-md-6 col-lg-3 ftco-animate">
           <div class="product">
-            <a href="artisanal#{{ a.ENtitle }}" class="img-prod"><img class="img-fluid" src="{{ a.image.url }}" alt="Colorlib Template" />
-              <div class="overlay"></div>
-            </a>
+            <a href="artisanal#{{ a.ENtitle }}" class="img-prod"><img class="img-fluid" src="{{ a.image.url }}" alt="Colorlib Template" /> <div class="overlay"></div></a>
             <div class="text py-3 pb-4 px-3 text-center">
               <h3><a href="artisanal#{{ a.ENtitle }}">{{ a.ENtitle }}</a></h3>
               <div class="d-flex">
                 <div class="pricing">
                   <p class="price">
-                    <span class="price-sale">{{ a.price }}Dt</span>
+                    <span class="price-sale">{{ a.price}}Dt - {{ a.price|intdiv:2.5 }}$ - {{ a.price|intdiv:3 }}€</span>
                   </p>
                 </div>
               </div>
-              <!--<div class="bottom-area d-flex px-3">
-                 <div class="m-auto d-flex">
-                  <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-                    <span><i class="ion-ios-menu"></i></span>
-                  </a>
-                  <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-                    <span><i class="ion-ios-cart"></i></span>
-                  </a>
-                  <a href="#" class="heart d-flex justify-content-center align-items-center ">
-                    <span><i class="ion-ios-heart"></i></span>
-                  </a>
-                </div>-->
+              <div class="bottom-area d-flex px-3">
+                 <!-- <a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">-->
+                 <!--   <span><i class="ion-ios-menu"></i></span>-->
+                 <!-- </a>-->
+                 <!-- <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">-->
+                 <!--   <span><i class="ion-ios-cart"></i></span>-->
+                 <!-- </a>-->
+                 <!-- <a href="#" class="heart d-flex justify-content-center align-items-center ">-->
+                 <!--   <span><i class="ion-ios-heart"></i></span>-->
+                 <!-- </a>-->
+                  {% if a.available %}
+					<p style="color: rgb(20, 146, 26);">Available</p>
+                {% else %}
+                    <p style="color: rgb(255, 0, 0);">UnAvailable</p>
+                {% endif %}
               </div>
             </div>
           </div>
@@ -271,7 +276,7 @@
       <div class="row mb-5">
         <div class="col-md">
           <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">MANTOUJ TOUNES</h2>
+            <h2 class="ftco-heading-2">ZAKIABIO</h2>
             <p>
               NATURAL PRODUCT AND 100% FRESH
             </p>
@@ -360,6 +365,7 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="{% static 'js/google-map.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
+  <script type="text/javascript" src="//compteur.websiteout.com/js/22/0/0/0"></script>
 </body>
 
 </html>
