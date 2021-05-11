@@ -32,6 +32,6 @@ def singlear(request, slug):
 def singlena(request, slug):
     try:
         product = NaturalProd.objects.get(slug = slug)
-        return render(request, 'fr/product-singlefr.html', context={'product':product})
+        return render(request, 'fr/product-singlefrar.html', context={'product':product})
     except:
         raise Http404

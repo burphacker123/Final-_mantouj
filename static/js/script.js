@@ -1,0 +1,26 @@
+jQuery(document).ready(function(){
+    jQuery('.signsu').hover(function(){
+        jQuery(".zsignsu").hide(0);
+        jQuery('.fadingPriceu').show(0);
+    });
+    jQuery('.signsf').hover(function(){
+        jQuery(".zsignsf").hide(0);
+        jQuery('.fadingPricef').show(0);
+    });
+    jQuery('.signst').hover(function(){
+        jQuery(".zsignst").hide(0);
+        jQuery('.fadingPricet').show(0);
+    });
+    jQuery('.signsu').mouseleave(function(){
+        jQuery(".zsignsu").show(0);
+        jQuery('.fadingPriceu').hide(0);
+    });
+    jQuery('.signsf').mouseleave(function(){
+        jQuery(".zsignsf").show(0);
+        jQuery('.fadingPricef').hide(0);
+    });
+    jQuery('.signst').mouseleave(function(){
+        jQuery(".zsignst").show(0);
+        jQuery('.fadingPricet').hide(0);
+    });
+});

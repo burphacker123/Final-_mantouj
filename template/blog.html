@@ -109,6 +109,9 @@
     	<div class="">
             {% for a in blog %}
             <div id="{{ a.ENitle }}" class="card" style=" width: 35%; margin:2cm; display:inline-block; height:auto">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{ a.video }}" allowfullscreen></iframe>
+              </div>
               <img class="card-img-top" src="{{ a.image.url }}" alt="Card image cap"></a>
               <div class="card-body">
                 <h5 class="card-title" align="center">{{ a.ENtitle }}</h5>

@@ -111,50 +111,32 @@
 			  <div class="col-lg-6 mb-5 ftco-animate">
 				  <a href="#" class="image-popup"><img src="{{ product.image.url }}" class="img-fluid" alt="Colorlib Template"></a>
 			  </div>
-			  <div class="col-lg-6 product-details pl-md-5 ftco-animate">
-				  <h3 align="right">{{ product.ARtitle }}</h3>
-            <p align="center" class="price"><span>1Kg/1L : {{ product.price }}Dt - {{ product.price|intdiv:2.5 }}$ - {{ product.price|intdiv:3 }}€</span></p>
-        <p  align="center" class="price"><span>500g/½L : {{ product.pricedemikg }}Dt - {{ product.pricedemikg|intdiv:2.5 }}$ - {{ product.pricedemikg|intdiv:3 }}€</span></p>
-        <p  align="center" class="price"><span>250g/¼L : {{ product.pricequartkg }}Dt - {{ product.pricequartkg|intdiv:2.5 }}$ - {{ product.pricequartkg|intdiv:3 }}€</span></p>
-            <p align="right" align="justify">{{ product.ARdescription }}</p>
+			  <div class="col-lg-6 product-details pl-md-5 ftco-animate hoverdiv">
+				  <h3 id='hovertl'>{{ product.ARtitle }}</h3>
+          <h5 style=" color: rgb(35, 56, 13);"id='hovertl'>Price:</h5>
+        <div class='signsu' style='border: rgb(0, 61, 8) solid 2px; text-align: center;  height: 1.4cm; width: 9cm; margin-left: 1cm;'>
+          <img class='zsignsu' src="{% static 'images/us.svg' %}" alt="" width="50px" length="50px" style="padding-top: 9px;" />
+          <p align="center" class='fadingPriceu displaynn' style="font-size: 10px; "><span><p class='fadingPriceu' style="color: rgb(20, 142, 146); display: none;">1L : {{ product.price|intdiv:2 }}$ - 500mL : {{ product.pricedemikg|intdiv:2 }}$ - 250mL : {{ product.pricequartkg|intdiv:2 }}$</p></span></p>
+        </div>
+        <div class='signsf' style='border: rgb(0, 61, 8) solid 2px; text-align: center; height: 1.4cm; width: 9cm; margin-top: 3px;; margin-left: 1cm;'>
+          <img class='zsignsf' src="{% static 'images/fr.svg' %}" alt="" width="50px" length="50px" style="padding-top: 9px;"/>
+          <p align="center" class='fadingPricef displaynn' style="font-size: 10px; "><span><p class='fadingPricef' style="color: rgb(20, 142, 146); display: none;">1L : {{ product.price|intdiv:3 }}€ - 500mL : {{ product.pricedemikg|intdiv:3 }}€ - 250mL : {{ product.pricequartkg|intdiv:3 }}€</p></span></p>
+        </div>  
+        <div class='signst' style='border: rgb(0, 61, 8) solid 2px; text-align: center; height: 1.4cm; width: 9cm; margin-top: 3px;; margin-left: 1cm; margin-bottom: 20px;'>
+          <img class='zsignst' src="{% static 'images/tn.svg' %}" alt="" width="50px" length="50px" style="padding-top: 9px;"/>
+          <p align="center" class='fadingPricet displaynn' style="font-size: 10px; "><span><p class='fadingPricet' style="color: rgb(20, 142, 146);  display: none;">1L : {{ product.price }}DT - 500mL : {{ product.pricedemikg }}DT - 250mL : {{ product.pricequartkg }}DT</p></span></p>
+        </div>
+		<p align="justify">{{ product.ARdescription }}</p>
 					  <div class="row mt-4">
-						  <!-- <div class="col-md-6">
-							  <div class="form-group d-flex">
-					<div class="select-wrap">
-					<div class="icon"><span class="ion-ios-arrow-down"></span></div>
-					<select name="" id="" class="form-control">
-						<option value="">Small</option>
-					  <option value="">Medium</option>
-					  <option value="">Large</option>
-					  <option value="">Extra Large</option>
-					</select>
-				  </div>
-				  </div>
-						  </div>
-						  <div class="w-100"></div>
-						  <div class="input-group col-md-6 d-flex mb-3">
-				   <span class="input-group-btn mr-2">
-					  <button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
-					 <i class="ion-ios-remove"></i>
-					  </button>
-					  </span>
-				   <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
-				   <span class="input-group-btn ml-2">
-					  <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
-					   <i class="ion-ios-add"></i>
-				   </button>
-				   </span>
-				</div> -->
         <div class="w-100"></div>
         {% if product.available %}
 				<div class="col-md-12">
-					<p style="color: rgb(20, 146, 26);">متاح</p>
+					<p style="color: rgb(20, 146, 26);">Disponible</p>
         {% else %}
-                    <p style="color: rgb(255, 0, 0);">غير متاح</p>
+                    <p style="color: rgb(255, 0, 0);">InDisponible</p>
         </div>
         {% endif %}
 			</div>
-
 			  </div>
 		  </div>
 	  </div>
@@ -258,6 +240,7 @@
   <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
   <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
   <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="{% static 'js/google-map.js' %}"></script>

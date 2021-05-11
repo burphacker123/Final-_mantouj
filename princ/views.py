@@ -6,7 +6,7 @@ from artisanalProd.models import ArtisanalProd
 from about.models import AboutObj
 from homeProduct.models import HomeObj
 def index(request):
-    choice = HomeObj.objects.all()[0]
+    choice = HomeObj.objects.all().first()
     blogPosts = BlogClass.objects.all()
     sliders = HomeSliders.objects.all()
     return render(request, 'index.html', context={'sliders': sliders, 'blog':blogPosts, 'homeobj': choice})
@@ -21,16 +21,18 @@ def artisanal(request):
     return render(request, 'artisanal.html', context={"prods":prods})
 def blog(request):
     blogPosts = BlogClass.objects.all()
-    return render(request, 'blog.html', context={'blog': blogPosts})
+    return render(request, 'blog.html', context={'blog': blogPosts,})
 def singlear(request, slug):
     try:
         product = ArtisanalProd.objects.get(slug = slug)
-        return render(request, 'product-single.html', context={'product':product})
+        art = ArtisanalProd.objects.all()
+        return render(request, 'product-singlear.html', context={'product':product})
     except:
         raise Http404
 def singlena(request, slug):
     try:
         product = NaturalProd.objects.get(slug = slug)
+        nat = NaturalProd.objects.all()
         return render(request, 'product-single.html', context={'product':product})
     except:
         raise Http404
